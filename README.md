@@ -38,7 +38,7 @@ The code is efficient for small \( n \) (up to \( n=4 \)) and handles isomorphis
 - **NetworkX**: Install via pip:
 ```bash
 pip install networkx
-
+```
 
 Input File for Part 2: A text file (e.g., input.txt) with directed edges, each line containing two space-separated integers (e.g., 1 2 for an edge from 1 to 2).
 
@@ -175,19 +175,5 @@ Challenges:
 Performance for ( n=5 ) is slow due to the large number of graphs and isomorphism checks. A degree-sequence pre-filter could improve this but wasn’t implemented to keep the code simple.
 Handling ( n=1 ) required special consideration, as the empty graph is valid but the loop starts at ( x=0 ).
 
-Contributing
-Contributions are welcome! Feel free to:
-
-Submit issues for bugs or suggestions.
-Create pull requests with optimizations (e.g., pre-filtering by invariants) or additional features.
-Test the code for larger ( n ) or different input graphs.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-Acknowledgments
-
-NetworkX: For providing efficient graph algorithms.
-Biological Computation 2025: For the engaging graph theory problems.
-Python: For its simplicity and powerful libraries.
 
 Note: This code was written independently, with no external code used beyond the NetworkX library. Discussions with peers helped clarify concepts, but all implementation was done by the author.```
