@@ -18,7 +18,7 @@ To run the code, you need:
 
 Input File (for Exercise 2): A text file (input.txt) containing the edges of the input graph, with each line formatted as two space-separated integers (e.g., 1 2 for a directed edge from vertex 1 to 2).
 
-Repository Structure
+## Repository Structure
 
 generate_subgraphs_ex1.py: Script for Exercise 1, generating all non-isomorphic weakly connected directed subgraphs.
 generate_subgraphs_ex2.py: Script for Exercise 2, counting occurrences of each subgraph in an input graph.
@@ -29,7 +29,7 @@ input.txt: Example input file for Exercise 2 with edges:1 2
 
 README.md: This file, providing project documentation.
 
-Installation
+## Installation
 
 Clone the repository:git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
