@@ -19,8 +19,6 @@ The code is written in Python 3 using the [NetworkX](https://networkx.org/) libr
   - [Part 2: Counting Motif Occurrences](#part-2-counting-motif-occurrences)
 - [Testing and Results](#testing-and-results)
 - [Design and Implementation Decisions](#design-and-implementation-decisions)
-- [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ## Project Overview
@@ -161,29 +159,21 @@ The code was tested for \( n=1 \) to \( n=4 \):
 - **\( n=2 \)**: 2 graphs (single edge, bidirectional edge).
 - **\( n=3 \)**: 13 graphs.
 - **\( n=4 \)**: 199 graphs.
-These counts align with the OEIS sequence A035512 for weakly connected directed graphs without loops.
 
-**Runtime Estimates** (tested on a standard laptop with 16GB RAM, Intel i7):
-- **1 Hour**: Completes up to \( n=4 \) (199 graphs, ~10 minutes). \( n=5 \) (9364 graphs) takes ~2-3 hours, so \( n=4 \) is the maximum.
-- **2 Hours**: Likely completes \( n=5 \).
-- **4 Hours**: Comfortably completes \( n=5 \).
-- **8 Hours**: May partially complete \( n=6 \) (878,219 graphs), but not guaranteed due to exponential growth.
+**Runtime Estimates** (tested on a standard PC with 32GB RAM, Intel i5):
+- **n = 1,2,3,4**: Completes up to \( n=4 \) (199 graphs, ~4 seconds). 
+- **n = 5+**: Running \( n=5 \) took me over 45 minutes, so overall a very long time (not feasiable for a pc in a decent amount of time).
 
-**Part 2 Example** (\( n=2 \), input: `1 2`, `2 3`, `1 4`):
-- Motif 1 (\( 1 \to 2 \)): Appears 3 times (subsets \( \{1,2\}, \{1,4\}, \{2,3\} \)).
-- Motif 2 (\( 1 \leftrightarrow 2 \)): Appears 0 times.
 
 ## Design and Implementation Decisions
 1. **NetworkX Usage**: Chosen for robust graph operations, especially `is_weakly_connected` and `is_isomorphic`, simplifying connectivity and isomorphism checks.
 2. **Edge Count Optimization**: Starts at \( \max(1, n-1) \) to skip disconnected graphs, as weakly connected graphs need at least \( n-1 \) edges in the underlying undirected graph (except for \( n=2 \)).
 3. **Isomorphism Check per Edge Count**: Maintains a temporary list (`temp_graphs`) per edge count to reduce isomorphism checks, as graphs with different edge counts are non-isomorphic.
 4. **Induced Subgraphs**: Uses `input_graph.subgraph(subset).copy()` to create proper induced subgraphs, preserving edge directions.
-5. **Output Sorting**: Sorts edges in output files for consistency, though not strictly required.
-6. **Error Handling**: Checks for sufficient vertices in Part 2, raising a `ValueError` if the input graph is too small.
 
 **Challenges**:
 - Performance for \( n=5 \) is slow due to the large number of graphs and isomorphism checks. A degree-sequence pre-filter could improve this but wasn’t implemented to keep the code simple.
-- Handling \( n=1 \) required special consideration, as the empty graph is valid but the loop starts at \( x=0 \).
+- Handling \( n=1 \) required special consideration, I considered the empty graph (no edges) to be considered.
 
 
 *Note*: This code was written independently, with no external code used beyond the NetworkX library. Discussions with peers helped clarify concepts, but all implementation was done by the author.
