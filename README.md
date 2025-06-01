@@ -19,7 +19,6 @@ The code is written in Python 3 using the [NetworkX](https://networkx.org/) libr
   - [Part 2: Counting Motif Occurrences](#part-2-counting-motif-occurrences)
 - [Testing and Results](#testing-and-results)
 - [Design and Implementation Decisions](#design-and-implementation-decisions)
-- [Acknowledgments](#acknowledgments)
 
 ## Project Overview
 This project addresses two problems in graph theory:
