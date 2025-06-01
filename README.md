@@ -1,6 +1,6 @@
 # Biological Computation 2025 - Exercise 2
 
-# Student name: Alex Makarov
+## Student name: Alex Makarov
 
 This repository contains a Python solution for Exercise #2 of the Biological Computation 2025 course. The project implements two programs to analyze directed graphs:
 1. **Part 1**: Generates all non-isomorphic weakly connected directed subgraphs with \( n \) vertices and outputs them to a file.
