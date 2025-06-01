@@ -134,7 +134,7 @@ count=0
 - **Input**: Positive integer \( n \).
 - **Process**:
   1. Generates all possible directed edges using `itertools.permutations(range(1, n+1), 2)`.
-  2. Iterates over edge counts from \( \max(1, n-1) \) to \( n(n-1) \), creating graphs with \( x \) edges.
+  2. Iterates over edge counts, creating graphs with \( x \) edges.
   3. Checks each graph for weak connectivity using `nx.is_weakly_connected`.
   4. Uses `nx.is_isomorphic` to ensure only non-isomorphic graphs are kept, maintaining a temporary list per edge count.
   5. Outputs to `subgraphs_part1.txt` with sorted edges for consistency.
