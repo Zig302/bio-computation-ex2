@@ -4,8 +4,7 @@ This repository contains a Python solution for Exercise #2 of the Biological Com
 1. **Part 1**: Generates all non-isomorphic weakly connected directed subgraphs with \( n \) vertices and outputs them to a file.
 2. **Part 2**: Counts the occurrences of these subgraphs (motifs) as induced subgraphs in a given input graph.
 
-The code is written in Python 3 using the [NetworkX](https://networkx.org/) library for graph operations and isomorphism checks. This project fulfills the assignment requirements, including generating subgraphs for \( n=1 \) to \( n=4 \), estimating runtime limits, and providing a GitHub repository with clear documentation.
-
+The code is written in Python 3 using the [NetworkX](https://networkx.org/) library for graph operations and isomorphism checks. 
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Prerequisites](#prerequisites)
@@ -20,8 +19,8 @@ The code is written in Python 3 using the [NetworkX](https://networkx.org/) libr
 - [Testing and Results](#testing-and-results)
 - [Design and Implementation Decisions](#design-and-implementation-decisions)
 
-## Project Overview
-This project addresses two problems in graph theory:
+## Exercise Overview
+This exercise addresses two problems in graph theory:
 - **Part 1**: Write a program that takes a positive integer \( n \) and generates all non-isomorphic weakly connected directed subgraphs with \( n \) vertices. Output the results to `subgraphs_part1.txt` in the format:
   ```
   n=<value>
@@ -171,7 +170,7 @@ The code was tested for \( n=1 \) to \( n=4 \):
 4. **Induced Subgraphs**: Uses `input_graph.subgraph(subset).copy()` to create proper induced subgraphs, preserving edge directions.
 
 **Challenges**:
-- Performance for \( n=5 \) is slow due to the large number of graphs and isomorphism checks. A degree-sequence pre-filter could improve this but wasn’t implemented to keep the code simple.
+- Performance for \( n=5 \) is slow due to the large number of graphs and isomorphism checks. 
 - Handling \( n=1 \) required special consideration, I considered the empty graph (no edges) to be considered.
 
 
